@@ -1,0 +1,56 @@
+
+main .new-tweet {
+  text-align: left;
+  padding: 0.7em;
+  background: #eee;
+  border: solid 1px #bebebe;;
+  border-radius: 5px;
+  margin-left: 2em;
+  margin-right: 2em;
+
+}
+
+main .new-tweet h2 {
+  margin: 0;
+}
+
+main section form textarea {
+  min-height: 80px;
+  max-width: 100%;
+  min-width: 100%;
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+.new-tweet .flex {
+  display: flex;
+  justify-content: space-between; 
+}
+
+/* button */
+main section form input {
+  margin-top: 0.2em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  border: 1px #bebebe;
+  border-radius: 0;
+  border-style: solid;
+}
+
+/* count */
+main section form span {
+  margin-top: 0.2em;
+}
+
+/* horizontal line below h2 */
+.new-tweet hr {
+ height: 1px;
+ border: 0;
+ border-top: 1px solid black;
+ margin-left: 0.1em;
+ margin-right: 0.1em;
+ margin-top: 0.1em;
+ margin-bottom: 1em;
+ padding: 0;
+}
