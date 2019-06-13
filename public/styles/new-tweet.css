@@ -41,9 +41,9 @@ main section form input {
   outline:none;
 }
 
-main section form input:hover {
+/* main section form:hover {
   opacity: 1;
-}
+} */
 
 /* count */
 main section form span {
@@ -62,11 +62,25 @@ main section form span {
  padding: 0;
 }
 
+.new-tweet {
+  opacity: 0.8;
+}
+
+.new-tweet:hover {
+  opacity: 1;
+}
+
+/* hovering over input button */
+#submit-new input:hover {
+  background-color: #00a087;
+  color: #e8fdff;
+}
+
 /* error messages */
 #validation1, #validation2 {
   justify-items: center;
   color: #D8000C;
   background-color: #FFD2D2;
-  border: 1px solid red;
-  padding: 0.1em 0.6em 0.1em 0.6em;
+  border-radius: 2px;
+  padding: 0.1em 0.4em 0.1em 0.4em;
 }

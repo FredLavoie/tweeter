@@ -59,6 +59,7 @@ $(document).ready(function() {
   // toggle 'new-tweet' show/hide
   $('#compose-button').on('click', function () {
     $('.new-tweet').slideToggle(500);
+    $('.new-tweet textarea').focus();
   });
 
   $('#validation1').hide();
@@ -70,16 +71,16 @@ $(document).ready(function() {
     let textArea = $(this).find('textarea');
 
     if (textArea.val() === '' || textArea.val() === null) {     
-      $('#validation1').slideToggle(300);     
+      $('#validation1').slideToggle(200);     
       setTimeout(function(){
-        $('#validation1').slideToggle(200);
-      }, 2500);      
+        $('#validation1').slideToggle(300);
+      }, 2000);      
       return;
     } else if (textArea.val().length > 140) {
-      $('#validation1').slideToggle(300);     
+      $('#validation1').slideToggle(200);     
       setTimeout(function(){
-        $('#validation1').slideToggle(200);
-      }, 2500);
+        $('#validation1').slideToggle(300);
+      }, 2000);
       return;
     }
     let serialForm = $(this).serialize();
