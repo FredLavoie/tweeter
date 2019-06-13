@@ -1,56 +1,8 @@
-// Fake data taken from tweets.json
-const data = [
-  {
-    'user': {
-      'name': 'Newton',
-      'avatars': {
-        'small':   'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png',
-        'regular': 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png',
-        'large':   'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png'
-      },
-      'handle': '@SirIsaac'
-    },
-    'content': {
-      'text': 'If I have seen further it is by standing on the shoulders of giants'
-    },
-    'created_at': 1560363000000
-  },
-  {
-    'user': {
-      'name': 'Descartes',
-      'avatars': {
-        'small':   'https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png',
-        'regular': 'https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png',
-        'large':   'https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png'
-      },
-      'handle': '@rd' },
-    'content': {
-      'text': 'Je pense , donc je suis'
-    },
-    'created_at': 1560300000000
-  },
-  {
-    'user': {
-      'name': 'Johann von Goethe',
-      'avatars': {
-        'small':   'https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png',
-        'regular': 'https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png',
-        'large':   'https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png'
-      },
-      'handle': '@johann49'
-    },
-    'content': {
-      'text': 'Es ist nichts schrecklicher als eine tätige Unwissenheit.'
-    },
-    'created_at': 1560110000000
-  }
-];
-
 // append each post to tweets-container
 function renderTweets(tweets) {
   for(let post of tweets) {
     let returnedTweet = createTweetElement(post);
-    $('#tweets-container').append(returnedTweet);    
+    $('#tweets-container').prepend(returnedTweet);    
   }
 }
 
@@ -100,6 +52,66 @@ function createTweetElement(tweet) {
   
 }
 
+
+// function calls with AJAX after document is loaded
+$(document).ready(function() {
+
+  // toggle 'new-tweet' show/hide
+  $('#compose-button').on('click', function () {
+    $('.new-tweet').slideToggle(500);
+  });
+
+  $('#validation1').hide();
+  $('#validation2').hide();
+
+  // form submission for new tweet
+  $('#submit-new').on('submit', function (event) {
+    event.preventDefault(); 
+    let textArea = $(this).find('textarea');
+
+    if (textArea.val() === '' || textArea.val() === null) {     
+      $('#validation1').slideToggle(300);     
+      setTimeout(function(){
+        $('#validation1').slideToggle(200);
+      }, 2500);      
+      return;
+    } else if (textArea.val().length > 140) {
+      $('#validation1').slideToggle(300);     
+      setTimeout(function(){
+        $('#validation1').slideToggle(200);
+      }, 2500);
+      return;
+    }
+    let serialForm = $(this).serialize();
+  
+    $.ajax({ 
+      method: 'POST',
+      url: '/tweets/',
+      data: serialForm
+    })
+      .then(function () {
+        $('#submit-new textarea').val('');
+        $('.counter').text('140').css('color','black');
+        loadTweets();
+      });
+  });
+
+  // fetch tweets from database after submission of new tweet
+  const loadTweets = function(){
+
+    $.ajax({
+      method: 'GET',
+      url: '/tweets/'
+    })
+      .then(function (data) {
+        renderTweets(data);
+      });
+  };
+  
+  loadTweets();
+
+});
+
 // helper function to create time since posted stamp on each post
 function getTime (num) {
   let days = num / 86400000;
@@ -111,9 +123,9 @@ function getTime (num) {
   } else if (days < 1.5 && days > 1) {
     return `~${Math.round(days)} day ago`;
   } else if (hours > 1.5) {
-    return `~${Math.round(hours)} hour ago`;
-  } else if (hours < 1.5 && hours > 1) {
     return `~${Math.round(hours)} hours ago`;
+  } else if (hours < 1.5 && hours > 1) {
+    return `~${Math.round(hours)} hour ago`;
   } else if (minutes > 1.5) {
     return `~${Math.round(minutes)} minutes ago`;
   } else if (minutes < 1.5 && minutes > 1) {
@@ -122,10 +134,4 @@ function getTime (num) {
     return '< 1 minute ago';
   }
 }
-
-
-// function call to initiate post creation from database
-$(document).ready(function() {
-  renderTweets(data);
-});
 

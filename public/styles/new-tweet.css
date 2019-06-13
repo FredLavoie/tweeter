@@ -1,5 +1,6 @@
 
 main .new-tweet {
+  display: none;
   text-align: left;
   padding: 0.7em;
   background: #eee;
@@ -7,7 +8,6 @@ main .new-tweet {
   border-radius: 5px;
   margin-left: 2em;
   margin-right: 2em;
-
 }
 
 main .new-tweet h2 {
@@ -21,6 +21,7 @@ main section form textarea {
   display: block;
   margin: 0;
   width: 100%;
+  outline:none;
 }
 
 .new-tweet .flex {
@@ -30,12 +31,18 @@ main section form textarea {
 
 /* button */
 main section form input {
+  opacity: 0.9;
   margin-top: 0.2em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   border: 1px #bebebe;
   border-radius: 0;
   border-style: solid;
+  outline:none;
+}
+
+main section form input:hover {
+  opacity: 1;
 }
 
 /* count */
@@ -53,4 +60,13 @@ main section form span {
  margin-top: 0.1em;
  margin-bottom: 1em;
  padding: 0;
+}
+
+/* error messages */
+#validation1, #validation2 {
+  justify-items: center;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  border: 1px solid red;
+  padding: 0.1em 0.6em 0.1em 0.6em;
 }

@@ -26,7 +26,7 @@ body {
  */
 
  main {
-  width: 450px;
+  width: 550px;
   text-align: center;
   margin: auto;
   padding-top: 140px;
@@ -34,68 +34,6 @@ body {
   background-color: white;
  }
 
- main .tweet {
-   opacity: 0.6;
-  text-align: left;
-  /* padding: 0.7em; */
-  border: solid 1px #bebebe;
-  border-radius: 5px;
-  margin-top: 2em;
-  margin-left: 2em;
-  margin-right: 2em;
-}
-
-main .tweet header {
-  background: #eee;
-  border-radius: 5px 5px 0px 0px;
-  
-}
-
-.tweet .flex {
-  display: flex;
-  justify-content: space-between;
-}
-
-
-
-/* horizontal line in footer */
-.tweet hr {
-  height: 1px;
-  border: 0;
-  border-style: none;
-  border-top: 1px solid #bebebe;
-  margin: 0.1em 0em 0.1em 0em;
-  padding: 0;
- }
-
- .tweet .avatar {
-  height: 35px;
-  width: 35px;
-  margin: 5px;
-  float: left;
-  border-radius: 3px;
-}
-
-.tweet .user-name {
-  margin-top: 3px;
-}
-.tweet .handle {
-  margin-top: 8px;
-  margin-right: 4px;
-}
-
-.tweet .time-stamp {
-  line-height: 2em;
-  padding-left: 8px;
-  font-size: 0.8em;
-}
-
-.tweet .content {
-  margin: 10px;
-}
-
-main .tweet:hover {
-  opacity: 1;
-}
+ 
 
 
