@@ -53,10 +53,6 @@ main .tweet header {
  margin: 10px;
 }
 
-/* main .tweet:hover {
- opacity: 1;
-} */
-
 main .tweet:hover .social, main .tweet:hover {
   opacity: 1;
  }
