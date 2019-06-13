@@ -24,13 +24,22 @@ function createTweetElement(tweet) {
   let $handle = $('<span>').addClass('handle').text(handle);
   let $content = $('<div>').addClass('content');
   let $footer = $('<footer>');
-  let $hr = $('<hr>');
   let $time = $('<span>').addClass('time-stamp').text(timeStamp);
+  let $social = $('<div>').addClass('social');
+
+  let $flag = $('<img>').attr('id', 'flag').attr('src', '/images/flag.png');
+  let $like = $('<img>').attr('id', 'like').attr('src', '/images/like.png');
+  let $retweet = $('<img>').attr('id', 'retweet').attr('src', '/images/retweet.png');
 
   // append all tags in reverse order (starting with furthest nested tags)
   $divflex
     .append($img)
     .append($user);
+
+  $social
+    .append($flag)
+    .append($like)
+    .append($retweet);
 
   $header
     .append($divflex)
@@ -40,8 +49,8 @@ function createTweetElement(tweet) {
     .append('<p>').text(content);
   
   $footer
-    .append($hr)
-    .append($time);
+    .append($time)
+    .append($social);
 
   $article
     .append($header)
@@ -50,6 +59,29 @@ function createTweetElement(tweet) {
   
   return $article; 
   
+}
+
+// helper function to create time since posted stamp on each post
+function getTime (num) {
+  let days = num / 86400000;
+  let hours = num / 3600000;
+  let minutes = num / 60000;
+
+  if (days > 1.5) {
+    return `~${Math.round(days)} days ago`;
+  } else if (days < 1.5 && days > 1) {
+    return `~${Math.round(days)} day ago`;
+  } else if (hours > 1.5) {
+    return `~${Math.round(hours)} hours ago`;
+  } else if (hours < 1.5 && hours > 1) {
+    return `~${Math.round(hours)} hour ago`;
+  } else if (minutes > 1.5) {
+    return `~${Math.round(minutes)} minutes ago`;
+  } else if (minutes < 1.5 && minutes > 1) {
+    return `~${Math.round(minutes)} minute ago`;
+  } else {
+    return '< 1 minute ago';
+  }
 }
 
 
@@ -112,27 +144,4 @@ $(document).ready(function() {
   loadTweets();
 
 });
-
-// helper function to create time since posted stamp on each post
-function getTime (num) {
-  let days = num / 86400000;
-  let hours = num / 3600000;
-  let minutes = num / 60000;
-
-  if (days > 1.5) {
-    return `~${Math.round(days)} days ago`;
-  } else if (days < 1.5 && days > 1) {
-    return `~${Math.round(days)} day ago`;
-  } else if (hours > 1.5) {
-    return `~${Math.round(hours)} hours ago`;
-  } else if (hours < 1.5 && hours > 1) {
-    return `~${Math.round(hours)} hour ago`;
-  } else if (minutes > 1.5) {
-    return `~${Math.round(minutes)} minutes ago`;
-  } else if (minutes < 1.5 && minutes > 1) {
-    return `~${Math.round(minutes)} minute ago`;
-  } else {
-    return '< 1 minute ago';
-  }
-}
 

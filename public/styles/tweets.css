@@ -20,23 +20,18 @@ main .tweet header {
  justify-content: space-between;
 }
 
-
-
-/* horizontal line in footer */
-.tweet hr {
- height: 1px;
- border: 0;
- border-style: none;
- border-top: 1px solid #bebebe;
- margin: 0.1em 0em 0.1em 0em;
- padding: 0;
+.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #bebebe;
 }
+
 
 .tweet .avatar {
  height: 35px;
  width: 35px;
  margin: 5px;
- float: left;
+ justify-content: left;
  border-radius: 3px;
 }
 
@@ -58,6 +53,20 @@ main .tweet header {
  margin: 10px;
 }
 
-main .tweet:hover {
+/* main .tweet:hover {
  opacity: 1;
+} */
+
+main .tweet:hover .social, main .tweet:hover {
+  opacity: 1;
+ }
+
+.social img {
+  height: 15px;
+  width: 15px;
+  margin: 3px;
+}
+
+.social {
+  opacity: 0;
 }
