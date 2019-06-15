@@ -6,6 +6,7 @@ function renderTweets(tweets) {
   }
 }
 
+// create HTML for new tweet element 
 function createTweetElement(tweet) {
 
   // assign post information to variables
@@ -31,7 +32,8 @@ function createTweetElement(tweet) {
   let $like = $('<img>').attr('id', 'like').attr('src', '/images/like.png');
   let $retweet = $('<img>').attr('id', 'retweet').attr('src', '/images/retweet.png');
 
-  // append all tags in reverse order (starting with furthest nested tags)
+  // append all tags in reverse order
+  // (starting with furthest nested tags)
   $divflex
     .append($img)
     .append($user);
@@ -61,7 +63,8 @@ function createTweetElement(tweet) {
   
 }
 
-// helper function to create time since posted stamp on each post
+// cerate timestamp with result of current date
+// minus tweet submission date
 function getTime (num) {
   let days = num / 86400000;
   let hours = num / 3600000;
@@ -83,7 +86,6 @@ function getTime (num) {
     return '< 1 minute ago';
   }
 }
-
 
 // function calls with AJAX after document is loaded
 $(document).ready(function() {
@@ -109,9 +111,9 @@ $(document).ready(function() {
       }, 2000);      
       return;
     } else if (textArea.val().length > 140) {
-      $('#validation1').slideToggle(200);     
+      $('#validation2').slideToggle(200);     
       setTimeout(function(){
-        $('#validation1').slideToggle(300);
+        $('#validation2').slideToggle(300);
       }, 2000);
       return;
     }

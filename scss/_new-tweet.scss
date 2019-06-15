@@ -1,11 +1,19 @@
+// COLORS
+$border-color: #bebebe;
+$backgroud-color: #eee;
+$body-color: #244751;
+$nav-bar-color:  #00a087;
+$nav-text-color: #e8fdff;
+$error-text-color: #D8000C;
+$error-box-color: #FFD2D2;
 
 main .new-tweet {
   display: none;
   text-align: left;
   padding: 0.7em;
-  background: #eee;
-  border: solid 1px #bebebe;;
-  border-radius: 5px;
+  background: $backgroud-color;
+  border: solid 1px $border-color;
+  border-radius: 0.3em;
   margin-left: 2em;
   margin-right: 2em;
 }
@@ -15,7 +23,7 @@ main .new-tweet h2 {
 }
 
 main section form textarea {
-  min-height: 80px;
+  min-height: 5em;
   max-width: 100%;
   min-width: 100%;
   display: block;
@@ -29,32 +37,27 @@ main section form textarea {
   justify-content: space-between; 
 }
 
-/* button */
+// button
 main section form input {
-  opacity: 0.9;
   margin-top: 0.2em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
-  border: 1px #bebebe;
+  border: 0.05em $border-color;
   border-radius: 0;
   border-style: solid;
   outline:none;
 }
-
-/* main section form:hover {
-  opacity: 1;
-} */
 
 /* count */
 main section form span {
   margin-top: 0.2em;
 }
 
-/* horizontal line below h2 */
+// horizontal line below h2
 .new-tweet hr {
- height: 1px;
+ height: 0.05em;
  border: 0;
- border-top: 1px solid black;
+ border-top: 0.05em solid $body-color;
  margin-left: 0.1em;
  margin-right: 0.1em;
  margin-top: 0.1em;
@@ -62,25 +65,42 @@ main section form span {
  padding: 0;
 }
 
-.new-tweet {
-  opacity: 0.8;
-}
+
 
 .new-tweet:hover {
   opacity: 1;
 }
 
-/* hovering over input button */
+// hovering over input button
 #submit-new input:hover {
-  background-color: #00a087;
-  color: #e8fdff;
+  background-color: $nav-bar-color;
+  color: $nav-text-color;
 }
 
-/* error messages */
+// error messages
 #validation1, #validation2 {
   justify-items: center;
-  color: #D8000C;
-  background-color: #FFD2D2;
-  border-radius: 2px;
+  color: $error-text-color;
+  background-color: $error-box-color;
+  border-radius: 0.15em;
   padding: 0.1em 0.4em 0.1em 0.4em;
 }
+
+@media (min-width: 801px) {
+  main section form input {
+    opacity: 0.9;
+  }
+  .new-tweet {
+    opacity: 0.8;
+  }
+}
+
+ @media (max-width: 800px) {
+  main section form input {
+    opacity: 1;
+  }
+  .new-tweet {
+    opacity: 1;
+  }
+}
+

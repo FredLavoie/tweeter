@@ -2,12 +2,20 @@
 
 //***************** REQUIRED PACKAGES ********************/
 //********************************************************/
-const PORT          = 8080;
-const express       = require('express');
-const bodyParser    = require('body-parser');
-const app           = express();
+const PORT            = 8080;
+const express         = require('express');
+const bodyParser      = require('body-parser');
+const app             = express();
+const sassMiddleware  = require('node-sass-middleware');
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(sassMiddleware({
+  src: 'scss',
+  dest: 'public/styles',
+  debug: true,
+  outputStyle: 'compressed',
+  prefix:  '/styles'
+}));
 app.use(express.static('public'));
 
 //********************* DATABASE *************************/
@@ -31,11 +39,15 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   app.use('/tweets', tweetsRoutes);
   
 
-  app.listen(PORT, () => {
-    console.log('Tweeter app listening on port ' + PORT);
+  let server = app.listen(PORT, () => {
+    console.log(`Tweeter app listening on port: ${PORT}`);
   });
   
-  // db.close();  // need to determine what to do with this
+  process.on('SIGINT', function() {
+    console.log('Goodbye!');
+    server.close(); // close connection to server
+    db.close(); // close connection to MongoDB
+  });
   
 });
 

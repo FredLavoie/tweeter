@@ -1,0 +1,37 @@
+// IMPORTS
+ @import 'nav';
+ @import 'new-tweet';
+ @import 'all-tweets';
+
+// COLORS
+$border-color: #bebebe;
+$backgroud-color: #eee;
+$body-color: #244751;
+$nav-bar-color:  #00a087;
+$nav-text-color: #e8fdff;
+$error-text-color: #D8000C;
+$error-box-color: #FFD2D2;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  color: $body-color;
+  background-color: $backgroud-color;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+main {
+  width: 550px;
+  text-align: center;
+  margin: auto;
+  padding-top: 6em;
+  padding-bottom: 5em;
+  background-color: white;
+ }
+

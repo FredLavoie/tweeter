@@ -1,0 +1,102 @@
+// COLORS
+$border-color: #bebebe;
+$backgroud-color: #eee;
+$body-color: #244751;
+$nav-bar-color:  #00a087;
+$nav-text-color: #e8fdff;
+$error-text-color: #D8000C;
+$error-box-color: #FFD2D2;
+
+main .tweet {
+  opacity: 0.8;
+  text-align: left;
+  border: solid 0.05em $border-color;
+  border-radius: 0.3em;
+  margin-top: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+main .tweet header {
+  background: $backgroud-color;
+  border-radius: 0.3em 0.3em 0em 0em;
+}
+
+.tweet .flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.05em solid $border-color;
+}
+
+.tweet .avatar {
+  height: 2em;
+  width: 2em;
+  margin: 0.3em;
+  justify-content: left;
+  border-radius: 0.2em;
+}
+
+.tweet .user-name {
+  margin-top: 0.2em;
+}
+
+.tweet .handle {
+  margin-top: 0.5em;
+  margin-right: 0.25em;
+}
+
+@media (min-width: 801px) {
+  main .tweet {
+    opacity: 0.8;
+  }
+  .social {
+    opacity: 0;
+  }
+  main .tweet:hover .social,
+  main .tweet:hover {
+    opacity: 1;
+  }
+  .social img {
+    height: 1em;
+    width: 1em;
+    margin: 0.2em;
+  }
+  .tweet .time-stamp {
+    line-height: 2em;
+    padding-left: 0.5em;
+    font-size: 0.8em;
+  }
+  .tweet .content {
+    margin: 0.75em;
+  }
+}
+
+ @media (max-width: 800px) {
+  main .tweet {
+    opacity: 1;
+  }
+  .social {
+    opacity: 1;
+  }
+  .social img {
+    height: 1.3em;
+    width: 1.3em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.35em;
+  }
+  .tweet .time-stamp {
+    line-height: 2em;
+    padding-left: 0.5em;
+    font-size: 1em;
+  }
+  .tweet .content {
+    margin: 0.3em;
+    font-size: 1.5em;
+  }
+}

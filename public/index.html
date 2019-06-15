@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
+    <!-- META INFORMATION -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
+    <!-- EXTERNAL CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <style>@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i&display=swap');</style>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
 
-    <!-- External JS -->
+    <!-- EXTERNAL JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <!-- App JS -->
+    <!-- APP JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
 
-    <!-- Top nav bar (fixed) -->
+    <!-- NAV BAR -->
     <nav id="nav-bar">
       <div class="left">
         <img class="logo" src="/images/bird.png">
@@ -35,9 +32,9 @@
       <button id="compose-button">Compose</button>
     </nav>
 
-    <!-- Page-specific (main) content here -->
+    <!-- MAIN CONTENT -->
     <main class="container">
-
+      <!-- NEW TWEET -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <hr>
@@ -50,11 +47,9 @@
             <span class="counter">140</span>
           </div>
         </form>
-
       </section>
-
+      <!-- ALL TWEETS -->
       <section id="tweets-container"></section>
-  
     </main>
 
   </body>

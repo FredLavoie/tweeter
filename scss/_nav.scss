@@ -1,0 +1,63 @@
+// COLORS
+$border-color: #bebebe;
+$backgroud-color: #eee;
+$body-color: #244751;
+$nav-bar-color:  #00a087;
+$nav-text-color: #e8fdff;
+$error-text-color: #D8000C;
+$error-box-color: #FFD2D2;
+
+#nav-bar {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $nav-bar-color;
+  color:  $nav-text-color;
+  padding: 0em 2em;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+#nav-bar .logo {
+  height: 5em;
+  width: 5em;
+}
+
+#nav-bar .header {
+  padding-left: 0.7em;
+  font-size: 2em;
+}
+
+#compose-button {
+opacity: 0.8;
+height: 2.5em;
+width: 5em;
+border-radius: 0.25em;
+background-color: $nav-bar-color;
+color: $nav-text-color;
+align-self: center;
+outline: none;
+}
+
+@media (min-width: 801px) {
+  #compose-button:hover {
+    opacity: 1;
+    color: $nav-bar-color;
+    background-color: $nav-text-color;
+  }
+}
+
+ @media (max-width: 800px) {
+  #compose-button {
+    opacity: 1;
+    background-color: $nav-bar-color;
+    color: $nav-text-color;
+  }
+}
+
+
