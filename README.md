@@ -15,8 +15,8 @@ The back-end for this project includes [Expressjs](https://expressjs.com/), a no
 
 ## Posting a new tweet:
 
-<img src="./sreenshots/ScreenRecording20190615.gif" width="800">
-![](./sreenshots/ScreenRecording20190615.gif)
+<img src="./screenshots/ScreenRecording20190615.gif" width="800">
+![](./screenshots/ScreenRecording20190615.gif)
 
 ## Getting Started
 
