@@ -11,12 +11,11 @@ This project utilises the [Node Sass middleware](https://www.npmjs.com/package/n
 The back-end for this project includes [Expressjs](https://expressjs.com/), a node.js framework for the back-end http server and [MogoDB](https://www.mongodb.com/), a noSQL, document-based database management system (DBMS).
 
 ### Responsive Design:
-
+Using media queries in CSS, the app removes the hover animations and adapts to the screen size of the user to make the app user-friendly on mobile devices. The Chrome Developer Tools were used to emulate various screen sizes to ensure compatibility. The flag, like and retweet buttons were also enlarged and spaced further apart for smaller screens to make them more accessible.
 
 ## Posting a new tweet:
 
-<img src="./screenshots/ScreenRecording20190615.gif" width="800">
-![](./screenshots/ScreenRecording20190615.gif)
+<img src="./screenshots/ScreenRecording.gif" width="800">
 
 ## Getting Started
 
