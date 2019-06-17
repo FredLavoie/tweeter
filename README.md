@@ -2,6 +2,8 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
+Tweeter is hosted on Heroku at: <https://tweeter-fredlavoie.herokuapp.com/>
+
 ### Front-end:
 Tweeter is single-page app (SPA) that emmulates Twitter. With the help of the [jQuery](https://jquery.com/) library, the HTML code for new tweets are created dynamically in the front-end javascript code. The various animations on screen (error messages, slidding animations, show/hide annimations, etc) are acheived using CSS and jQuery.
 
@@ -16,19 +18,6 @@ Using media queries in CSS, the app removes the hover animations and adapts to t
 ## Posting a new tweet:
 
 <img src="./screenshots/ScreenRecording.gif" width="800">
-
-## Getting Started
-
-1. Clone this repository to your local machine.
-2. Once the project is cloned, head over to your bash terminal and install the dependencies (listed below) using the following command:
-```
-npm install <module name>
-```
-3. Once all the dependencies are installed, type the following command to get the server started:
-```
-node ./server/index.js
-```
-4. Finally, go to <http://localhost:8080/> in your web browser to start tweeting!
 
 ## Dependencies
 
