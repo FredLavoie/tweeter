@@ -27,7 +27,6 @@ body {
 }
 
 main {
-  width: 550px;
   text-align: center;
   margin: auto;
   padding-top: 6em;
@@ -35,3 +34,14 @@ main {
   background-color: white;
  }
 
+ @media (min-width: 801px) {
+  main {
+    width: 550px;
+  }
+}
+
+ @media (max-width: 800px) {
+  main {
+    width: 90%;
+  }
+}
