@@ -22,7 +22,6 @@ app.use(express.static('public'));
 //********************* DATABASE *************************/
 //********************************************************/
 const MongoClient   = require('mongodb').MongoClient;
-//const MONGODB_URI   = 'mongodb://localhost:27017/tweeter';
 const MONGODB_URI   = process.env.MONGODB_URI;
 
 //****************** SERVER ROUTING **********************/
