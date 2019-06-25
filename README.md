@@ -17,7 +17,7 @@ Using media queries in CSS, the app removes the hover animations and adapts to t
 
 ## Posting a new tweet:
 
-<img src="./screenshots/ScreenRecording.gif" width="800">
+<img src="./screenshots/ScreenRecording2.gif" width="800">
 
 ## Dependencies
 
